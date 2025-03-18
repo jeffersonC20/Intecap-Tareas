@@ -1,0 +1,32 @@
+
+entrada = "Python es un lenguaje poderoso y versátil"
+lista = entrada.split("es un lenguaje poderoso y")
+print ("1.",lista)
+
+entrada = "Hola  mundo  en  Python"
+lista2 = entrada.replace("  "," ")
+print("2.",lista2)
+
+entrada = "usuario@gmail.com"
+lista3 = entrada.split("usuario@")
+print("3,",lista3)
+
+entrada = input("Ingrese el nombre del documento con su extencion : ")
+print("4",entrada.endswith(".pdf"))
+
+entrada = "Me gusta Python"
+lista_inver = entrada[::-1]
+print("5", lista_inver)
+
+cadena = input("Ingrese lo que desea obtener : ")
+poema = "poema"
+cancion = "cancion"
+lista = "lista"
+if cadena.find(poema) != -1:
+    print ("Porque cada día te quiero más, hoy más que ayer y menos que mañana. Julio Cortázar (La Vuelta al Día en Ochenta Mundos)")
+elif cadena.find(cancion) != -1:
+    print ("Eres como la noche, callada y constelada. Tu silencio es de estrella, tan lejano y sencillo. Me gustas cuando callas porque estás como ausente. Distante y dolorosa como si hubieras muerto")
+elif cadena.find(lista) != -1:
+    print("1. MCDonandls, Dominos pizza, Pollo campero")
+else :
+    print("No se encuentra disponible esa opcion")
