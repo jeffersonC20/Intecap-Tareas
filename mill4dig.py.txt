@@ -1,0 +1,70 @@
+numero = int(input("Ingrese un número de 3 digitos : "))
+uni = numero % 10
+decena = numero // 10
+aux1= numero % 100
+uni2 = aux1 % 10 
+decena2 = aux1 // 10
+cente = numero // 100
+aug = numero % 1000
+aug2 = aug // 10
+uni3 = aug % 10
+decen = aug2 % 10
+centen = aug // 100
+mill = numero // 1000
+unidad = ["","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve"]
+decimal = ["","dieci","veinti","trenta ","cuarenta ","cincuenta ","sesenta ","setenta ","ochenta ","noventa "]
+especiales = ["","once", "doce","trece","catorce","quince"]
+centena = ["","ciento ","doscientos ","trescientos ","cuatrocientos ","quinientos ","seiscientos ","setecientos ","ochocientos ","novecientos "]
+millar = ["","mil ","dosmil ","tresmil ","cuatromil ","cincomil ","seismil ","sietemil ","ochomil ","nuevemil "]
+if numero > 0 and numero < 100:
+    if numero > 0 and numero <= 9:
+        print(unidad[uni])
+    elif numero == 10:
+        print("diez")
+    elif numero > 10 and numero <= 15:
+        print(especiales[uni])
+    elif (numero >= 16 and numero <= 29) and (uni != 0):
+        print(decimal[decena]+unidad[uni])
+    elif numero == 20:
+        print("veninte")
+    elif (numero >= 30 and numero <= 99) and (uni != 0):
+        print(decimal[decena]+" y "+unidad[uni])
+    elif (numero >= 30 and numero <= 99) and (uni == 0):
+        print(decimal[decena])
+elif numero > 99 and numero < 1000:
+    if numero == 100:    
+        print("cien")
+    elif numero > 100 and numero <= 109:
+        print(centena[cente]+unidad[uni2])
+    elif numero == 110:
+        print(centena[cente]+"diez")
+    elif numero > 110 and numero <= 115:
+        print(centena[cente]+especiales[uni2])
+    elif (numero >= 116 and numero <= 129) and (uni != 0):
+        print(centena[cente]+decimal[decena2]+unidad[uni2])
+    elif numero == 120:
+        print(centena[aux]+"veninte")
+    elif (numero >= 130 and numero <= 999) and (uni != 0):
+        print(centena[cente]+decimal[decena2]+" y "+unidad[uni2])
+    elif (numero >= 130 and numero <= 999) and (uni == 0):
+        print(centena[cente]+decimal[decena2])
+
+elif numero >= 1000 and numero <= 9999:
+    if numero == 1000:
+        print(millar[mill])
+    elif numero > 1000 and numero <= 1009:
+        print(millar[mill]+unidad[uni3])
+    elif numero == 1010:
+        print(millar[mill]+"diez")
+    elif numero > 1010 and numero <= 1015:
+        print(millar[mill]+especiales[uni])
+    elif (numero >= 1016 and numero <= 1029) and (uni != 0):
+        print(millar[mill]+centena[centen]+decimal[decen]+unidad[uni3])
+    elif numero == 1020:
+        print(millar[mill]+"veinte")
+    elif (numero >= 1030 and numero <= 9999) and (uni3 != 0):
+        print(millar[mill]+centena[centen]+decimal[decen]+" y "+unidad[uni3])
+    elif (numero >= 1030 and numero <= 9999) and (uni3 == 0):
+        print(millar[mill]+centena[centen]+decimal[decen]+ " y "+unidad[uni3])
+else :
+    print ("Ingrese un número valido")
